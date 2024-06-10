@@ -1,0 +1,24 @@
+# .gitignore
+
+# Node specific
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React / build output
+/build/
+/.idea/
+
+# Environment variables
+.env
+
+# Backend specific
+backend/node_modules/
+backend/package-lock.json
+backend/yarn-error.log
+
+# Frontend specific
+frontend/node_modules/
+frontend/package-lock.json
+frontend/yarn-error.log
+frontend/build/
