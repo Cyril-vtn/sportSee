@@ -70,7 +70,3 @@ Le serveur devrait maintenant être en cours d'exécution sur [http://localhost:
     ```
 
 L'application frontend devrait maintenant être en cours d'exécution sur [http://localhost:5173](http://localhost:5173).
-
-## Contribution
-
-Les contributions sont les bienvenues! Veuillez ouvrir une issue ou une pull request pour toute suggestion ou amélioration.
