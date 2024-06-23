@@ -1,13 +1,12 @@
 .sidebar {
   width: 117px;
-  height: 100%;
+  height: calc(100vh - 90px);
   background-color: var(--color-black);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   color: var(--color-white);
-  padding: 60px 0;
   gap: 160px;
 }
 
@@ -25,4 +24,5 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 24px;
+  margin-bottom: 60px;
 }
