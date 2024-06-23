@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { Layout } from "./Layout";
+import { Home } from "./pages/Home";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -17,7 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </Layout>
           }
         >
-          {/* <Route index element={<App />} /> */}
+          <Route index element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>
