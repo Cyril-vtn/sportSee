@@ -58,7 +58,15 @@ export const CustomBarChart = () => {
           className="barChart_container"
         >
           <BarChart data={data.sessions} barSize={10}>
-            <XAxis tickLine={false} tickMargin={10} />
+            <XAxis
+              tickLine={false}
+              tickMargin={10}
+              dataKey="day"
+              tickFormatter={(value) => {
+                const date = new Date(value);
+                return date.getDate();
+              }}
+            />
             <YAxis
               yAxisId="right"
               orientation="right"
@@ -66,7 +74,6 @@ export const CustomBarChart = () => {
               dataKey="kilogram"
               tickMargin={10}
               axisLine={false}
-              
             />
             <CartesianGrid
               strokeDasharray="5 5"
