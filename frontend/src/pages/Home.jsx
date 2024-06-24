@@ -3,6 +3,7 @@ import "../styles/home.css";
 import { useParams } from "react-router-dom";
 import { getUser } from "../services/api.services";
 import { StatCard } from "../components/StatCard";
+import { CustomBarChart } from "../components/CustomBarChart";
 export const Home = () => {
   const { id } = useParams();
   const [data, setData] = useState(undefined);
@@ -24,7 +25,14 @@ export const Home = () => {
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </div>
           <div className="home_content_stats">
-            <div></div>
+            <div className="home_content_charts">
+              <CustomBarChart />
+              <div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
             <div className="home_content_card">
               {Object.entries(data.keyData).map(([key, value], i) => (
                 <StatCard key={i} type={key} value={value} />

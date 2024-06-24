@@ -48,11 +48,19 @@ h1 p {
   height: 100%;
   display: flex;
   justify-content: space-between;
-
+  gap: 30px;
 }
 
 .home_content_card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.home_content_charts {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
