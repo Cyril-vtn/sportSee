@@ -27,7 +27,7 @@ export const Home = () => {
           <div className="home_content_stats">
             <div className="home_content_charts">
               <CustomBarChart />
-              <div>
+              <div className="home_content_scores">
                 <div></div>
                 <div></div>
                 <div></div>
