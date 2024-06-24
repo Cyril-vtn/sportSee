@@ -35,7 +35,7 @@ export const StatCard = ({ type, value }) => {
       default:
         setIcon(null);
     }
-  }, [type]); // Cette fonction s'exécute uniquement lorsque `type` change.
+  }, [type]);
 
   return (
     <div className="statCard">
