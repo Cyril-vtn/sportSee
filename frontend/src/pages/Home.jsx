@@ -5,6 +5,7 @@ import { getUser } from "../services/api.services";
 import { StatCard } from "../components/StatCard";
 import { CustomBarChart } from "../components/CustomBarChart";
 import { CustomLineChart } from "../components/CustomLineChart";
+import { CustomRadarChart } from "../components/CustomRadarChart";
 export const Home = () => {
   const { id } = useParams();
   const [data, setData] = useState(undefined);
@@ -30,7 +31,7 @@ export const Home = () => {
               <CustomBarChart />
               <div className="home_content_scores">
                 <CustomLineChart />
-                <div></div>
+                <CustomRadarChart />
                 <div></div>
               </div>
             </div>
