@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getUser } from "../services/api.services";
 import { StatCard } from "../components/StatCard";
 import { CustomBarChart } from "../components/CustomBarChart";
+import { CustomLineChart } from "../components/CustomLineChart";
 export const Home = () => {
   const { id } = useParams();
   const [data, setData] = useState(undefined);
@@ -28,7 +29,7 @@ export const Home = () => {
             <div className="home_content_charts">
               <CustomBarChart />
               <div className="home_content_scores">
-                <div></div>
+                <CustomLineChart />
                 <div></div>
                 <div></div>
               </div>

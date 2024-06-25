@@ -1,0 +1,29 @@
+.customLineChart {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-red);
+  border-radius: 5px;
+  max-height: 263px;
+}
+
+.customLineChart h3 {
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-white);
+  opacity: 0.5;
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+.LineChart_tooltip {
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+  align-items: center;
+  color: var(--color-dark);
+  font-size: 8px;
+  gap: 7px;
+  padding: 4px 10px;
+}
