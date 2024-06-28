@@ -74,6 +74,13 @@ export const CustomBarChart = () => {
               tickMargin={10}
               axisLine={false}
             />
+            <YAxis
+              yAxisId="left"
+              orientation="left"
+              tickLine={false}
+              dataKey="calories"
+              hide={true}
+            />
             <CartesianGrid
               strokeDasharray="5 5"
               horizontal={true}
@@ -88,7 +95,7 @@ export const CustomBarChart = () => {
               radius={[10, 10, 0, 0]}
             />
             <Bar
-              yAxisId="right"
+              yAxisId="left"
               dataKey="calories"
               fill="#E60000"
               radius={[10, 10, 0, 0]}
