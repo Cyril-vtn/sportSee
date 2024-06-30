@@ -47,7 +47,10 @@ export const CustomRadarChart = () => {
             <PolarGrid />
             <PolarAngleAxis
               dataKey="kind"
-              tick={{ fill: "white", fontSize: 12 }}
+              tick={{
+                fill: "white",
+                fontSize: 12,
+              }}
             />
             <Radar
               name="Lily"
