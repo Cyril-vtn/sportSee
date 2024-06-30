@@ -13,10 +13,20 @@ import { getAverageSessions } from "../services/api.services";
 export const CustomLineChart = () => {
   const [data, setData] = useState(undefined);
   const { id } = useParams();
-  const jours = ["L", "M", "M", "J", "V", "S", "D"];
+  const jours = [" ", "L", "M", "M", "J", "V", "S", "D", " "];
 
   useEffect(() => {
     getAverageSessions(id).then((res) => {
+      const firstDay = res.data.sessions[0];
+      const lastDay = res.data.sessions[res.data.sessions.length - 1];
+      res.data.sessions.unshift({
+        day: 0,
+        sessionLength: firstDay.sessionLength,
+      });
+      res.data.sessions.push({
+        day: 8,
+        sessionLength: lastDay.sessionLength,
+      });
       setData(res.data);
     });
   }, [id]);
@@ -42,7 +52,7 @@ export const CustomLineChart = () => {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data.sessions}
-            margin={{ top: 0, right: 20, left: 20, bottom: 0 }}
+            margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
           >
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
@@ -53,22 +63,52 @@ export const CustomLineChart = () => {
             <YAxis domain={["dataMin - 20", "dataMax + 40"]} hide />
             <XAxis
               dataKey="day"
-              tickFormatter={(value) => jours[value - 1]}
+              tickFormatter={(day) => jours[day]}
               tickLine={false}
               axisLine={false}
               tick={{ fill: "#FFFFFF", fontSize: 12 }}
               opacity={0.5}
               tickMargin={-10}
+              minTickGap={20}
             />
             <Line
               type="natural"
               dataKey="sessionLength"
               stroke="url(#lineGradient)"
               dot={false}
-              activeDot={true}
+              activeDot={(activeDotProps) => {
+                const { index } = activeDotProps;
+
+                if (index === 0 || index === 8) {
+                  return null;
+                }
+
+                return (
+                  <circle
+                    cx={activeDotProps.cx}
+                    cy={activeDotProps.cy}
+                    r={4}
+                    fill="#FFFFFF"
+                  />
+                );
+              }}
               strokeWidth={2}
             />
-            <Tooltip content={<CustomTooltip />} cursor={false} />
+            <Tooltip
+              content={({ payload, active }) => {
+                if (!payload || payload.length === 0) {
+                  return null;
+                }
+
+                const currentIndex = payload[0].payload;
+
+                if (currentIndex.day === 0 || currentIndex.day === 8) {
+                  return null;
+                }
+                return <CustomTooltip active={active} payload={payload} />;
+              }}
+              cursor={false}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

@@ -4,6 +4,7 @@
   background-color: var(--color-red);
   border-radius: 5px;
   max-height: 263px;
+  overflow: hidden;
 }
 
 .customLineChart h3 {
