@@ -52,7 +52,7 @@ export const CustomLineChart = () => {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data.sessions}
-            margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+            margin={{ top: 0, right: -5, left: -5, bottom: 0 }}
           >
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
