@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import { useParams } from "react-router-dom";
 import { getActivity } from "../services/api.services";
-import "../styles/CustomBarChart.css";
+import "../styles/customBarChart.css";
 
 export const CustomBarChart = () => {
   const [data, setData] = useState(undefined);
