@@ -6,12 +6,13 @@ import { StatCard } from "../components/StatCard";
 import { CustomBarChart } from "../components/CustomBarChart";
 import { CustomLineChart } from "../components/CustomLineChart";
 import { CustomRadarChart } from "../components/CustomRadarChart";
+import { CustomRadialBarChart } from "../components/CustomRadialBarChart";
 export const Home = () => {
   const { id } = useParams();
   const [data, setData] = useState(undefined);
+
   useEffect(() => {
     getUser(id).then((res) => {
-      console.table(res.data.keyData);
       setData(res.data);
     });
   }, [id]);
@@ -22,7 +23,7 @@ export const Home = () => {
         <div className="home_content">
           <div className="home_content_title">
             <h1>
-              Bonjour <span>{data.userInfos?.firstName}</span>
+              Bonjour <span>{data.userInfos.firstName}</span>
             </h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </div>
@@ -32,7 +33,7 @@ export const Home = () => {
               <div className="home_content_scores">
                 <CustomLineChart />
                 <CustomRadarChart />
-                <div></div>
+                <CustomRadialBarChart score={data.todayScore} />
               </div>
             </div>
             <div className="home_content_card">
