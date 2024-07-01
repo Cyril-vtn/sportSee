@@ -6,3 +6,8 @@
   max-height: 263px;
   color: var(--color-white);
 }
+
+.radarChart {
+  height: 50%;
+  width: 50%;
+}

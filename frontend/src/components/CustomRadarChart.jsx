@@ -27,10 +27,24 @@ export const CustomRadarChart = () => {
   };
 
   const transformData = useCallback((data) => {
-    return data.data.map((item) => ({
+    console.log(data);
+    const newData = data.data.map((item) => ({
       ...item,
       kind: translateKindToFrench(item.kind),
     }));
+
+    const item6 = newData.find((item) => item.kind === "Intensité");
+    const item3 = newData.find((item) => item.kind === "Endurance");
+
+    const filteredData = newData.filter(
+      (item) => item.kind !== "Intensité" && item.kind !== "Endurance"
+    );
+
+    filteredData.unshift(item6);
+
+    filteredData.splice(3, 0, item3);
+
+    return filteredData;
   }, []);
 
   useEffect(() => {
@@ -43,7 +57,7 @@ export const CustomRadarChart = () => {
     data && (
       <div className="customRadarChart">
         <ResponsiveContainer width="100%" height="100%">
-          <RadarChart outerRadius={70} data={data}>
+          <RadarChart outerRadius="60%" data={data}>
             <PolarGrid />
             <PolarAngleAxis
               dataKey="kind"
