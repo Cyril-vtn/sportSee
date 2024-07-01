@@ -69,7 +69,6 @@ export const CustomLineChart = () => {
               tick={{ fill: "#FFFFFF", fontSize: 12 }}
               opacity={0.5}
               tickMargin={-10}
-              minTickGap={20}
             />
             <Line
               type="natural"
