@@ -77,3 +77,34 @@ h1 p {
   align-items: flex-end;
   gap: 30px;
 }
+
+@media screen and (max-width: 1100px) {
+  .home_content {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    gap: 10px;
+  }
+
+  .home_content_title {
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h1 p {
+    font-size: 16px;
+  }
+  .home_content_charts {
+    gap: 20px;
+  }
+
+  .home_content_stats {
+    gap: 20px;
+  }
+
+  .home_content_scores {
+    gap: 20px;
+  }
+}
