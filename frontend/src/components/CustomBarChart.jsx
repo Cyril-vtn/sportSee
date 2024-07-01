@@ -84,7 +84,7 @@ export const CustomBarChart = () => {
             <CartesianGrid
               strokeDasharray="5 5"
               horizontal={true}
-              horizontalPoints={[0, "50%"]}
+              horizontalPoints={[5, "50%"]}
               vertical={false}
             />
             <Tooltip content={<CustomTooltip />} />
