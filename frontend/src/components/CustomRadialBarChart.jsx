@@ -9,8 +9,6 @@ import "../styles/customRadialBarChart.css";
 export const CustomRadialBarChart = ({ score }) => {
   const scoreData = [{ kind: "Score", value: score * 100 }];
 
-  console.log(scoreData);
-
   return (
     scoreData && (
       <div className="customRadialBarChart">
@@ -39,7 +37,6 @@ export const CustomRadialBarChart = ({ score }) => {
           <h3 className="customRadialBarChart_score_title">
             de votre <br /> objectif
           </h3>
-          <div className="customRadialBarChart_score_circle" />
         </div>
       </div>
     )

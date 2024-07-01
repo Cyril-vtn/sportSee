@@ -9,8 +9,8 @@
 }
 .customRadialBarChart_title {
   position: absolute;
-  top: 25px;
-  left: 30px;
+  top: 10%;
+  left: 13%;
   font-size: 15px;
   font-weight: 500;
 }
@@ -51,4 +51,17 @@
   height: 150px;
   border-radius: 50%;
   background-color: var(--color-white);
+}
+
+@media screen and (max-width: 1100px) {
+  .customRadialBarChart_title {
+    top: 15px;
+    left: 15px;
+  }
+  .customRadialBarChart_score p {
+    font-size: 20px;
+  }
+  .customRadialBarChart_score_title {
+    font-size: 14px;
+  }
 }
