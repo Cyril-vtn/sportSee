@@ -18,7 +18,7 @@ export const CustomBarChart = () => {
 
   useEffect(() => {
     getActivity(id).then((res) => {
-      setData(res.data);
+      setData(res);
     });
   }, [id]);
 

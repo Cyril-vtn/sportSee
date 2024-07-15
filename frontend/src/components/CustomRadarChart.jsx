@@ -27,7 +27,6 @@ export const CustomRadarChart = () => {
   };
 
   const transformData = useCallback((data) => {
-    console.log(data);
     const newData = data.data.map((item) => ({
       ...item,
       kind: translateKindToFrench(item.kind),
@@ -49,7 +48,7 @@ export const CustomRadarChart = () => {
 
   useEffect(() => {
     getPerformance(id).then((res) => {
-      setData(transformData(res.data));
+      setData(transformData(res));
     });
   }, [id, transformData]);
 

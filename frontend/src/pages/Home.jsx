@@ -13,7 +13,7 @@ export const Home = () => {
 
   useEffect(() => {
     getUser(id).then((res) => {
-      setData(res.data);
+      setData(res);
     });
   }, [id]);
 
@@ -33,7 +33,7 @@ export const Home = () => {
               <div className="home_content_scores">
                 <CustomLineChart />
                 <CustomRadarChart />
-                <CustomRadialBarChart score={data.todayScore} />
+                <CustomRadialBarChart score={data.score} />
               </div>
             </div>
             <div className="home_content_card">

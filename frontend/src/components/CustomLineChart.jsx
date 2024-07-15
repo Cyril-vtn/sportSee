@@ -17,17 +17,17 @@ export const CustomLineChart = () => {
 
   useEffect(() => {
     getAverageSessions(id).then((res) => {
-      const firstDay = res.data.sessions[0];
-      const lastDay = res.data.sessions[res.data.sessions.length - 1];
-      res.data.sessions.unshift({
+      const firstDay = res.sessions[0];
+      const lastDay = res.sessions[res.sessions.length - 1];
+      res.sessions.unshift({
         day: 0,
         sessionLength: firstDay.sessionLength,
       });
-      res.data.sessions.push({
+      res.sessions.push({
         day: 8,
         sessionLength: lastDay.sessionLength,
       });
-      setData(res.data);
+      setData(res);
     });
   }, [id]);
 
